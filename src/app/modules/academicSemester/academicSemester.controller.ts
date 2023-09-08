@@ -23,7 +23,37 @@ const getAllSemester:RequestHandler = catchAsync(async(req , res)=> {
         statusCode:httpStatus.OK,
         success:true,
         message:"Retrived all semester successfully",
-        meta: result.count,
+        data:result
+    })
+})
+const getSingleSemester:RequestHandler = catchAsync(async(req , res)=> {
+    const {id}= req.params
+    const result = await academicSemesterService.getSingleSemester(id);
+    sendResponse(res, {
+        statusCode:httpStatus.OK,
+        success:true,
+        message:"Retrived Single semester successfully",
+        data:result
+    })
+})
+const updateSemester:RequestHandler = catchAsync(async(req , res)=> {
+    const {id}= req.params;
+    const data = req.body;
+    const result = await academicSemesterService.updateSemester(id, data);
+    sendResponse(res, {
+        statusCode:httpStatus.OK,
+        success:true,
+        message:"Semester Updated successfully",
+        data:result
+    })
+})
+const deleteSemester:RequestHandler = catchAsync(async(req , res)=> {
+    const{id} =req.params;
+    const result = await academicSemesterService.deleteSemester(id);
+    sendResponse(res, {
+        statusCode:httpStatus.OK,
+        success:true,
+        message:"Semester deleted successfully",
         data:result
     })
 })
@@ -31,5 +61,8 @@ const getAllSemester:RequestHandler = catchAsync(async(req , res)=> {
 
 export const academicSemestercontroller = {
     createSemester,
-    getAllSemester
+    getAllSemester,
+    getSingleSemester,
+    updateSemester,
+    deleteSemester
 }

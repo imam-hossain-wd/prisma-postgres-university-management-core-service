@@ -14,6 +14,11 @@
             "date": 1694175000141,
             "name": "G:\\next-level-web-development\\postgres-prisma-university-management-core-service\\logs\\winston\\errors\\phu-2023-08-09-18-error.log",
             "hash": "53b35b5a49b252e5f35cff3382074f702c32b98e7e3a918b05ae5cde69a6bdcd"
+        },
+        {
+            "date": 1694178018382,
+            "name": "G:\\next-level-web-development\\postgres-prisma-university-management-core-service\\logs\\winston\\errors\\phu-2023-08-09-19-error.log",
+            "hash": "e41370b3b59619c0ad43fbff43ca7f5e1bf6451dea707cc279b6bdb3ac6fe774"
         }
     ],
     "hashType": "sha256"
