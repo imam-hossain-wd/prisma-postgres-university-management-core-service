@@ -9,7 +9,13 @@ const createSemester = async (data:AcademicSemester): Promise<AcademicSemester> 
     return result;
 }
 
+const getAllSemester = async ():Promise<AcademicSemester []>=>{
+    const result = await prisma.academicSemester.findMany();
+    return result
+} 
+
 
 export const academicSemesterService = {
-    createSemester
+    createSemester,
+    getAllSemester
 }
