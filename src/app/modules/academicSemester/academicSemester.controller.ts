@@ -4,8 +4,6 @@ import { academicSemesterService } from "./academicSemester.service";
 import sendResponse from "../../../shared/sendResponse";
 import httpStatus from "http-status";
 
-
-
 const createSemester:RequestHandler = catchAsync(async(req, res)=> {
     const data = req.body;
     const result = await academicSemesterService.createSemester(data);
@@ -18,7 +16,8 @@ const createSemester:RequestHandler = catchAsync(async(req, res)=> {
 })
 
 const getAllSemester:RequestHandler = catchAsync(async(req , res)=> {
-    const result = await academicSemesterService.getAllSemester();
+    const options = req.query;
+    const result = await academicSemesterService.getAllSemester(options);
     sendResponse(res, {
         statusCode:httpStatus.OK,
         success:true,
