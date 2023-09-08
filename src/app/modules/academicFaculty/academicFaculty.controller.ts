@@ -16,7 +16,8 @@ const createFaculty:RequestHandler = catchAsync(async(req, res)=> {
     })
 })
 const getAllFaculty:RequestHandler = catchAsync(async(req, res)=> {
-    const result = await academicFacultyService.getAllFaculty();
+    const options = req.query;
+    const result = await academicFacultyService.getAllFaculty(options);
     sendResponse(res, {
         statusCode: httpStatus.OK,
         success:true,

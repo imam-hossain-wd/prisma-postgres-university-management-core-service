@@ -9,9 +9,21 @@ const createFaculty = async(data:AcademicFaculty):Promise<AcademicFaculty>=> {
     return result
 }
 
-const getAllFaculty = async():Promise<AcademicFaculty[]> =>{
-    const result = await prisma.academicFaculty.findMany();
-    return result;
+const getAllFaculty = async(options:any):Promise<AcademicFaculty[]> =>{
+    console.log(options, 'service');
+    const {limit, page} = options;
+    const skip = parseInt(limit) * parseInt(page) - parseInt(limit);
+    const take = parseInt(limit);
+
+    return await prisma.$transaction(async(tx)=> {
+        const result = await tx.academicFaculty.findMany({
+            take,
+            skip
+
+        })
+        return result;
+    })
+
 } 
 
 const getSingleFaculty = async(id:string) : Promise<AcademicFaculty | null> => {
