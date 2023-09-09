@@ -37,14 +37,14 @@ model AcademicFaculty {
 }
 
 model AcademicDepartment {
-  id                String          @id @default(uuid())
-  title             String
-  createAt          DateTime        @default(now()) @map("create_at")
-  updatedAt         DateTime        @default(now()) @updatedAt @map("updated_at")
+  id    String @id @default(uuid())
+  title String
   academicFaculty   AcademicFaculty @relation(fields: [academicFacultyId], references: [id])
   academicFacultyId String          @map("academic_faculty_id")
   students          Student[]
   faculties         Faculty[]
+  createAt          DateTime        @default(now()) @map("create_at")
+  updatedAt         DateTime        @default(now()) @updatedAt @map("updated_at")
 
   @@map("academic_department")
 }

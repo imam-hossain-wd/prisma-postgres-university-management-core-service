@@ -29,6 +29,16 @@
             "date": 1694196881718,
             "name": "G:\\next-level-web-development\\postgres-prisma-university-management-core-service\\logs\\winston\\errors\\phu-2023-09-09-00-error.log",
             "hash": "2a3438d464157edd5f9af201c3ed659afdaa2953dc8bc4088028e8d4359aca61"
+        },
+        {
+            "date": 1694199602556,
+            "name": "G:\\next-level-web-development\\postgres-prisma-university-management-core-service\\logs\\winston\\errors\\phu-2023-09-09-01-error.log",
+            "hash": "b3a11c934fa2eeaf8c91791dba9b69cd74dca1f30bca1db960d53d40d7f13137"
+        },
+        {
+            "date": 1694239652097,
+            "name": "G:\\next-level-web-development\\postgres-prisma-university-management-core-service\\logs\\winston\\errors\\phu-2023-09-09-12-error.log",
+            "hash": "434ef3e9225d17cac911792f04287c82f8443013031caeb14f331c73ef151e12"
         }
     ],
     "hashType": "sha256"
